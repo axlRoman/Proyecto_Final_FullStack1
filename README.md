@@ -1,6 +1,7 @@
 # Proyecto_Final_FullStack1
 
 # Build Setup
+~~~
 ## install dependencies
 npm install
   
@@ -21,3 +22,4 @@ npm run e2e
   
 ## run all tests
 npm test
+~~~
