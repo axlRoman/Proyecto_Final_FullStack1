@@ -17,12 +17,12 @@
      @click="entrar"
      :disabled="!valido"
      color="success"
-    >Entrar</v-btn>
-    <v-btn @click="limpar" color="warning">Limpiar</v-btn>
+    ><v-icon rigth>mdi-checkbox-marked-circle</v-icon>Entrar</v-btn>
+    <v-btn @click="limpar" color="error"> <v-icon>mdi-close-circle</v-icon>Limpiar</v-btn>
 
     <v-spacer class="mb-4"></v-spacer>
 
-    <v-btn v-bind:to="{name: 'Registro'}" color="error">No tienes una cuenta? Registrate</v-btn>
+    <v-btn v-bind:to="{name: 'Registro'}" color="cyan">¿Primer acceso? ¡Registrate!</v-btn>
   </v-form>
 </template>
 
