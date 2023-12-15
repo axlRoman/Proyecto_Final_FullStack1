@@ -1,7 +1,7 @@
 <template>
     <v-form v-model="valido" ref="formulario" lazy-validation>
         <v-text-field
-            label="Película:"
+            label="App:"
             v-model="nombre"
             :rules="reglasNombre"
             required

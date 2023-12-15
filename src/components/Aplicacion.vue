@@ -4,14 +4,14 @@
       <v-card>
         <v-card-title primary-title>
           <div>
-            <div class="headline">{{ pelicula.nombre }}</div>
+            <div class="headline">{{ aplicacion.nombreApp }}</div>
             <span class="grey--text">
-              {{ pelicula.anhopub }} &middot; {{ pelicula.genero }}
+              {{ aplicacion.resumen }} &middot; {{ aplicacion.categoria }}
             </span>
           </div>
         </v-card-title>
         <h6 class="card-title" v-if="current_user"
-          @click="calificar">Calificar esta película</h6>
+          @click="calificar">Calificar la aplicacion</h6>
         <!-- <h6 class="card-title" @click="calificar">Calificar esta película</h6> -->
         <v-card-text>
           {{ pelicula.sinopsis }}

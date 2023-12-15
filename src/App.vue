@@ -11,30 +11,12 @@
           </v-list-item>
         </router-link>
 
-        <router-link v-bind:to="{name: 'Videojuegos'}" class="side_bar_link">
+        <router-link v-bind:to="{name: 'Inicio'}" class="side_bar_link">
           <v-list-item>
             <v-list-item-action>
               <v-icon>mdi-gamepad</v-icon>
             </v-list-item-action>
-            <v-list-item-content>Videojuegos</v-list-item-content>
-          </v-list-item>
-        </router-link>
-
-        <router-link v-bind:to="{name: 'Peliculas'}" class="side_bar_link">
-          <v-list-item>
-            <v-list-item-action>
-              <v-icon>mdi-movie</v-icon>
-            </v-list-item-action>
-            <v-list-item-content>Peliculas</v-list-item-content>
-          </v-list-item>
-        </router-link>
-
-        <router-link v-bind:to="{name: 'Extra'}" class="side_bar_link">
-          <v-list-item>
-            <v-list-item-action>
-              <v-icon>mdi-plus-circle-outline</v-icon>
-            </v-list-item-action>
-            <v-list-item-content>Extra</v-list-item-content>
+            <v-list-item-content>Apps</v-list-item-content>
           </v-list-item>
         </router-link>
 
@@ -50,7 +32,7 @@
     </v-navigation-drawer>
     <v-app-bar
       absolute
-      color="#FFFFFF"
+      color="#EFF6FF"
       dark
       shrink-on-scroll
       prominent
@@ -69,15 +51,16 @@
         <v-icon>menu</v-icon>
       </v-app-bar-nav-icon>
 
-      <v-app-bar-title class="font-weight-bold">Nexus Of Entertainment</v-app-bar-title>
+      <v-spacer></v-spacer>
+      <v-app-bar-title class="font-weight-bold">Apps rank</v-app-bar-title>
 
       <v-spacer></v-spacer>
       <v-btn
         v-bind:to="{name: 'Login'}"
         rounded
-        color="#81D4FA"
+        color="#457598"
         class="black--text font-weight-bold"
-      >Login</v-btn>
+      >Iniciar sesion</v-btn>
     </v-app-bar>
     <v-spacer class="mb-4"></v-spacer>
 
@@ -89,8 +72,8 @@
      </v-container>
     </v-main>
 
-    <v-footer color="#81D4FA" app>
-      <span class="black--text">&copy; Todos los derechos Reservados RomanTech 2019-2023</span>
+    <v-footer color="#55647E" app>
+      <span class="black--text">&copy; Todos los derechos reservados 2023</span>
     </v-footer>
   </v-app>
 </template>
