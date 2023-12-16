@@ -50,19 +50,9 @@ export default new Router({
       component: Aplicaciones,
     },
     {
-      path: '/aplicaciones/:id',
-      name: 'Aplicaciones',
-      component: Aplicaciones,
-    },
-    {
       path: '/aplicaciones/:genero',
       name: 'AplicacionesGenero',
       component: Aplicaciones,
-    },
-    {
-      path: '/aplicaciones/agregar',
-      name: 'AgregarAplicacion',
-      component: AgregarAplicacion,
     },
   ],
 });
