@@ -26,7 +26,7 @@
      type="password"
     ></v-text-field>
     <v-btn
-     @click="enviar"
+     @click="enviar()"
      :disabled="!valido"
      color="success"
     >Enviar</v-btn>
@@ -57,14 +57,12 @@ export default {
     async enviar() {
       if (this.$refs.formulario.validate()) {
         // Agregar proceso aqui
-        return axios({
-          method: 'post',
+        return axios.post('http://localhost:8081/usuarios/registro', {
           data: {
             nombre: this.nombre,
             email: this.email,
             contrasenha: this.contrasenha,
           },
-          url: 'http://localhost:8081/usuarios/registro',
           headers: {
             'Content-Type': 'application/json',
           },
