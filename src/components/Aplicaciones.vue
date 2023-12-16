@@ -16,7 +16,7 @@
     <div class="button_categorias">
 
       <div class="button_agregar">
-        <v-btn class="ma-2" v-bind:to="'/musica/agregar'" filled color="deep-purple accent-1">
+        <v-btn class="ma-2" v-bind:to="'/aplicaciones/agregar'" filled color="deep-purple accent-1">
           Agregar una aplicacion
         </v-btn>
       </div>
