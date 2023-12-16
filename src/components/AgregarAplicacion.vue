@@ -7,7 +7,7 @@
             required
         ></v-text-field>
         <v-text-field
-            label="Resumen:"
+            label="Descripcion:"
             v-model="resumen"
             multi-line
         ></v-text-field>
@@ -24,6 +24,9 @@
             required
             :rules="reglasDesarrollador"
         ></v-text-field>
+        <input type="file" @change="onFileChange" accept="image/*" required :rules="reglasImagen"/>
+        <v-spacer> </v-spacer>
+        <v-text-field disabled></v-text-field>
         <v-btn
             @click="guardar"
             :disabled="!valido"
@@ -43,6 +46,7 @@ export default {
     resumen: '',
     categoria: '',
     desarrollador: '',
+    imagen: '',
     reglasNombre: [
       v => !!v || 'La aplicacion es requerida',
     ],
@@ -52,6 +56,9 @@ export default {
     ],
     reglasCategoria: [
       v => !!v || 'La categoria es requerida',
+    ],
+    reglasImagen: [
+      v => !!v || 'La imagen es requerida',
     ],
     select: null,
     categorias: [
@@ -65,6 +72,13 @@ export default {
   }),
 
   methods: {
+    onFileChange(event) {
+      const selectedFile = event.target.files[0];
+      if (selectedFile) {
+        // Convertir la imagen a una URL legible
+        this.imagen = URL.createObjectURL(selectedFile);
+      }
+    },
     guardar() {
       if (this.$refs.formulario.validate()) {
         // Realizar siguiente acción

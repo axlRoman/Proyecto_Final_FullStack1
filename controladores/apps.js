@@ -10,6 +10,7 @@ module.exports.controller = (app) => {
             resumen: req.body.resumen,
             categoria: req.body.categoria,
             desarrollador: req.body.desarrollador,
+            imagen: req.body.imagen,
         });
 
         nuevaAplicacion.save()
