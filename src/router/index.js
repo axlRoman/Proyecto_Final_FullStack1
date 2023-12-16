@@ -30,7 +30,7 @@ export default new Router({
       component: AgregarAplicacion,
     },
     {
-      path: '/aplicaciones/:id',
+      path: '/aplicacion/:id',
       name: 'Aplicacion',
       component: Aplicacion,
     },

@@ -100,7 +100,7 @@ export default {
     async obtenerAplicacion() {
       return axios({
         method: 'get',
-        url: `http://localhost:8081/api/aplicaciones/${this.route.params.id}`,
+        url: `http://localhost:8081/api/aplicacion/${this.route.params.id}`,
       })
         .then((respuesta) => {
           this.aplicacion = respuesta.data;
