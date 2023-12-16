@@ -8,6 +8,8 @@
             <v-img :src="item.src" height="350"></v-img>
             <v-card-title>{{ item.title }}</v-card-title>
             <v-card-text>{{ item.description }}</v-card-text>
+            <v-btn color="primary" @click="calificar">Calificar App</v-btn>
+            <v-btn color="red" @click="resenhar()">Reseñar</v-btn>
           </v-card>
         </v-col>
       </v-row>

@@ -11,10 +11,10 @@
           </v-list-item>
         </router-link>
 
-        <router-link v-bind:to="{name: 'Inicio'}" class="side_bar_link">
+        <router-link v-bind:to="{name: 'Aplicaciones'}" class="side_bar_link">
           <v-list-item>
             <v-list-item-action>
-              <v-icon>mdi-gamepad</v-icon>
+              <v-icon>mdi-apps</v-icon>
             </v-list-item-action>
             <v-list-item-content>Apps</v-list-item-content>
           </v-list-item>
