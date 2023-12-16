@@ -50,7 +50,7 @@ export default {
     ],
     reglasContra: [
       v => !!v || 'La contraseña no puede estar vacía',
-      v => v.length > 8 || 'La contraseña debe tener 8 o más caracteres',
+      v => v.length >= 8 || 'La contraseña debe tener 8 o más caracteres',
     ],
   }),
   methods: {
@@ -70,7 +70,7 @@ export default {
           },
         })
           .then(() => {
-            this.$swal('¡Maravilloso!', 'Usted por ha podido registrarse', 'success');
+            this.$swal('Genial!', 'Registro exitoso', 'success');
             this.$router.push({ name: 'Login' });
           })
           .catch((error) => {

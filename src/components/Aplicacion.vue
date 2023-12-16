@@ -4,17 +4,17 @@
       <v-card>
         <v-card-title primary-title>
           <div>
-            <div class="headline">{{ pelicula.nombre }}</div>
+            <div class="headline">{{ aplicacion.nombreApp }}</div>
             <span class="grey--text">
-              {{ pelicula.anhopub }} &middot; {{ pelicula.genero }}
+              {{ aplicacion.categoria }} &middot; {{ aplicacion.desarrollador }}
             </span>
           </div>
         </v-card-title>
         <h6 class="card-title" v-if="current_user"
-          @click="calificar">Calificar esta película</h6>
+          @click="calificar">Calificar esta aplicacion</h6>
         <!-- <h6 class="card-title" @click="calificar">Calificar esta película</h6> -->
         <v-card-text>
-          {{ pelicula.sinopsis }}
+          {{ aplicacion.resumen }}
         </v-card-text>
       </v-card>
     </v-flex>
@@ -45,7 +45,7 @@ const ComponenteCalif = Vue.extend({
   },
   template: `
     <div class="rating">
-      ¿Cuál fue su expriencia viendo esta película?
+      ¿Cuál fue su expriencia utilizando esta aplicacion?
       <star-rating v-model="calif" :show-rating="false"></star-rating>
     </div>   
   `,
@@ -57,14 +57,14 @@ const ComponenteCalif = Vue.extend({
 const componente = new ComponenteCalif().$mount(wrapper);
 
 export default {
-  name: 'Pelicula',
+  name: 'Aplicacion',
   data() {
     return {
-      pelicula: [],
+      aplicacion: [],
     };
   },
   mounted() {
-    this.obtenerPelicula();
+    this.obtenerAplicacion();
   },
   methods: {
     async calificar() {
@@ -77,13 +77,13 @@ export default {
         },
       })
         .then(() => {
-          const peliculaId = this.$route.params.id;
+          const aplicacionId = this.$route.params.id;
           return axios({
             method: 'post',
             data: {
               calif: estado.nota,
             },
-            url: `http://localhost:8081/peliculas/calif/${peliculaId}`,
+            url: `http://localhost:8081/aplicaciones/calif/${aplicacionId}`,
             headers: {
               'Content-Type': 'application/json',
             },
@@ -97,13 +97,13 @@ export default {
             });
         });
     },
-    async obtenerPelicula() {
+    async obtenerAplicacion() {
       return axios({
         method: 'get',
-        url: `http://localhost:8081/api/peliculas/${this.route.params.id}`,
+        url: `http://localhost:8081/api/aplicaciones/${this.route.params.id}`,
       })
         .then((respuesta) => {
-          this.pelicula = respuesta.data;
+          this.aplicacion = respuesta.data;
         })
         .catch(() => {
 

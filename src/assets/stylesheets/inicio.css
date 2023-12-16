@@ -5,6 +5,7 @@
     text-align: center;
     color: #2c3e50;
     margin-top: 60px;
+    margin-bottom: 60px;
     width: 100%;
 }
 
@@ -31,7 +32,10 @@ a.side_bar_link {
     height: 100% !important;
 }
 
-/* Musica -> /musica */
+.flex.xs4 {
+    flex-basis: 80% !important;
+    max-width: 80% !important;
+}
 
 .centrar-card {
     display: flex;
@@ -50,9 +54,9 @@ a.side_bar_link {
 }
 
 .titulo-primario {
-    font-size: 40px;
-    text-align: left;
-    margin-top: 130px;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 20px;
     margin-bottom: 40px;
 }
 
@@ -92,3 +96,7 @@ a.side_bar_link {
     margin: 20px 0;
 }
 
+.carrusel {
+    margin-top: 125px;
+    justify-content: center;
+}

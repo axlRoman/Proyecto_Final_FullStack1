@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Esquema = mongoose.Schema;
 const EsquemaCalificacion = new Esquema ({
-    pelicula_id: String,
+    app_id: String,
     user_id: String,
     calif: Number,
 });

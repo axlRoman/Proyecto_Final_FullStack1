@@ -18,7 +18,7 @@
 
       <div class="mb-4 d-flex align-center">
         <v-avatar size="120">
-          <img src="../assets/images/axel.jpg">
+          <img src="../assets/images/luis.jpg">
         </v-avatar>
         <div class="flex-column ml-2">
           <div class="headline">Luis Enrique Batres Martinez - 20130806</div>
