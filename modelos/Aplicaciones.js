@@ -5,6 +5,7 @@ const EsquemaAplicacion = new Esquema({
     resumen: String,
     categoria: String,
     desarrollador: String,
+    imagen: String,
 });
 
 const Aplicacion = mongoose.model('Aplicacion', EsquemaAplicacion);

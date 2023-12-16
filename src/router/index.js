@@ -7,6 +7,8 @@ import Aplicacion from '@/components/Aplicacion';
 import Registro from '@/components/Registro';
 import Login from '@/components/Login';
 
+import Aplicaciones from '@/components/Aplicaciones';
+
 Vue.use(Router);
 
 export default new Router({
@@ -41,6 +43,26 @@ export default new Router({
       path: '/usuarios/login',
       name: 'Login',
       component: Login,
+    },
+    {
+      path: '/aplicaciones',
+      name: 'Aplicaciones',
+      component: Aplicaciones,
+    },
+    {
+      path: '/aplicaciones/:id',
+      name: 'Aplicaciones',
+      component: Aplicaciones,
+    },
+    {
+      path: '/aplicaciones/:genero',
+      name: 'AplicacionesGenero',
+      component: Aplicaciones,
+    },
+    {
+      path: '/aplicaciones/agregar',
+      name: 'AgregarAplicacion',
+      component: AgregarAplicacion,
     },
   ],
 });
