@@ -40,8 +40,8 @@ module.exports.controller = (app) => {
             Usuario.obtenerUsuarioPorEmail(email, (err, usuario) => {
                 if (!usuario) {
                     res.status(404).json({ mensaje: 'El usuario no existe' });
-                } else {
-                    Usuario.compararContrasenha(contrasenha, usuario.contrasenha, (error, coincide) => {
+                }
+                Usuario.compararContrasenha(contrasenha, usuario.contrasenha, (error, coincide) => {
                         if (error) throw error;
                         if (coincide) {
                             const payload = { id: usuario.id };
@@ -51,7 +51,6 @@ module.exports.controller = (app) => {
                             res.status(401).json({ mensaje: 'La contraseña es incorrecta' });
                         }
                     });
-                }
             });
         }
     });
