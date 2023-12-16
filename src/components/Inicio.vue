@@ -10,7 +10,7 @@
         <v-card-title primary-title class="d-flex justify-center">
           <div class="headline font-weight-bold">Aplicaciones</div>
         </v-card-title>
-        <img src="../assets/images/videojuegos.png" class="imagen-juego">
+        <img src="https://ouytfgyhujiko.000webhostapp.com/405589a9-1caa-4bee-a108-a0a68ab78f62.jpg" class="imagen-juego">
         <v-card-text>
           <v-btn
             rounded
