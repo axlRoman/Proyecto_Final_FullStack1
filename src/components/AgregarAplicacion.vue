@@ -90,7 +90,7 @@ export default {
             categoria: this.categoria,
             desarrollador: this.desarrollador,
           },
-          url: 'http://localhost:8081/aplicaciones',
+          url: 'http://localhost:8081/aplicaciones/agregar',
           headers: {
             'Content-Type': 'application/json',
           },

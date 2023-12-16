@@ -18,22 +18,20 @@
      :disabled="!valido"
      color="success"
     >
-    
     <v-icon rigth>mdi-checkbox-marked-circle</v-icon>Entrar</v-btn>
     <v-btn @click="limpiar" color="error"> <v-icon>mdi-close-circle</v-icon>Limpiar</v-btn>
 
     <v-spacer class="mb-4"></v-spacer>
 
-    <v-btn class="font-weight-bold white--text" v-bind:to="{name: 'Registro'}" color="#49576C">Crear una cuenta</v-btn>
+    <v-btn class="font-weight-bold white--text" v-bind:to="{name: 'Registro'}"
+    color="#49576C">Crear una cuenta</v-btn>
 
     <div class="general-margin-top">
-    <v-btn @click="loginWithGoogle" color="#C25757" dark rounded>
+    <v-btn color="#C25757" dark rounded>
       <v-icon left>mdi-google</v-icon>
       Ingresa con Google
       </v-btn>
     </div>
-      
-    </v-auth-button>
   </v-form>
 </template>
 

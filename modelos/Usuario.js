@@ -55,7 +55,7 @@ module.exports.obtenerUsuarioPorEmail = (email, callback) => {
         });
 };
 
-module.exports.comparaContrasenha = (contrasenhaCandidato, hash, callback) => {
+module.exports.compararContrasenha = (contrasenhaCandidato, hash, callback) => {
     bcryptjs.compare(contrasenhaCandidato, hash, (err, coincide) => {
         if (err) throw err;
         callback(null, coincide);

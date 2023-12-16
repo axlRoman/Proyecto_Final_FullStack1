@@ -15,28 +15,25 @@
       </v-carousel>
     </v-col>
   </v-row>
-    
-
-      <v-card
-        elevation="20"
-        outlined
-        shaped
-        color="bold lighten-4"
-        max-width="80%"
-      >
-        <v-card-title primary-title class="justify-center">
-          <div class="headline font-weight-bold">Aplicaciones</div>
-        </v-card-title>
-        <img src="https://th.bing.com/th/id/OIP.tAnmrKhXx3VwiHKHGxp9FwHaDr?w=1089&h=540&rs=1&pid=ImgDetMain" class="imagen-apps">
-        <v-card-text>
-          <v-btn
-            color="#49576C"
-            class="font-weight-bold white--text"
-            v-bind:to="{name: 'Aplicaciones'}"
-          >Ver todo</v-btn>
-        </v-card-text>
-      </v-card>
-
+    <v-card
+      elevation="20"
+      outlined
+      shaped
+      color="bold lighten-4"
+      max-width="80%"
+    >
+      <v-card-title primary-title class="justify-center">
+        <div class="headline font-weight-bold">Aplicaciones</div>
+      </v-card-title>
+      <img src="https://th.bing.com/th/id/OIP.tAnmrKhXx3VwiHKHGxp9FwHaDr?w=1089&h=540&rs=1&pid=ImgDetMain" class="imagen-apps">
+      <v-card-text>
+        <v-btn
+          color="#49576C"
+          class="font-weight-bold white--text"
+          v-bind:to="{name: 'Aplicaciones'}"
+        >Ver todo</v-btn>
+      </v-card-text>
+    </v-card>
   </v-layout>
 </template>
 
