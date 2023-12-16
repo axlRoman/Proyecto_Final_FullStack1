@@ -2,7 +2,7 @@
   "name": "proyecto-final",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "Jorge Cisneros de la Torre <jorgecisneros2002@gmail.com>",
+  "author": "Francisco Axel Roman Cardoza <alu.19130971@edu.itlalaguna.edu.mx>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",

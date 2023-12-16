@@ -18,11 +18,11 @@
      :disabled="!valido"
      color="success"
     ><v-icon rigth>mdi-checkbox-marked-circle</v-icon>Entrar</v-btn>
-    <v-btn @click="limpar" color="error"> <v-icon>mdi-close-circle</v-icon>Limpiar</v-btn>
+    <v-btn @click="limpiar" color="error"> <v-icon>mdi-close-circle</v-icon>Limpiar</v-btn>
 
     <v-spacer class="mb-4"></v-spacer>
 
-    <v-btn v-bind:to="{name: 'Registro'}" color="cyan">¿Primer acceso? ¡Registrate!</v-btn>
+    <v-btn v-bind:to="{name: 'Registro'}" color="cyan">¿No tienes cuenta? ¡Registrate!</v-btn>
   </v-form>
 </template>
 
@@ -40,32 +40,37 @@ export default {
     ],
     reglasContra: [
       v => !!v || 'La contraseña no puede estar vacía',
-      v => v.length >= 8 || 'La contraseña debe tener 8 o más caracteres',
     ],
   }),
   methods: {
     async entrar() {
-      return axios({
-        method: 'post',
-        data: {
-          email: this.email,
-          contrasenha: this.contrasenha,
-        },
-        url: 'http://localhost:8081/usuarios/login',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-        .then((respuesta) => {
-          window.localStorage.setItem('auth', respuesta.data.token);
-          this.$swal('Ma-ra-vi-llo-so!', 'Está listo para iniciar', 'success');
-          this.$router.push({ name: 'Inicio' });
+      if (this.$refs.formulario.validate()) {
+        return axios({
+          method: 'post',
+          data: {
+            email: this.email,
+            contrasenha: this.contrasenha,
+          },
+          url: 'http://localhost:8081/usuarios/login',
+          headers: {
+            'Content-Type': 'application/json',
+          },
         })
-        .catch((error) => {
-          const mensaje = error.respuesta.data.mensaje;
-          this.$swal('Oh no!', `${mensaje}`, 'error');
-          this.$router.push({ name: 'Login' });
-        });
+          .then((respuesta) => {
+            window.localStorage.setItem('auth', respuesta.data.token);
+            this.$swal('Genial!', 'Listo para iniciar', 'success');
+            this.$router.push({ name: 'Inicio' });
+            // eslint-disable-next-line no-console
+            console.log(respuesta.data);
+          })
+          .catch((error) => {
+            const mensaje = error.response.data.mensaje;
+            this.$swal('Oh no!', `${mensaje}`, 'error');
+            this.$router.push({ name: 'Inicio' });
+          });
+      }
+
+      return true;
     },
     limpiar() {
       this.$refs.formulario.reset();

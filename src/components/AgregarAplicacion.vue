@@ -1,28 +1,28 @@
 <template>
     <v-form v-model="valido" ref="formulario" lazy-validation>
         <v-text-field
-            label="App:"
+            label="Aplicacion:"
             v-model="nombre"
             :rules="reglasNombre"
             required
         ></v-text-field>
         <v-text-field
-            label="Sinopsis:"
-            v-model="sinopsis"
+            label="Resumen:"
+            v-model="resumen"
             multi-line
         ></v-text-field>
         <v-select
-            label="Año de publicación:"
-            v-model="anhopub"
+            label="Categoria:"
+            v-model="categoria"
             required
-            :rules="reglasPublicacion"
-            :items="anhos"
+            :rules="reglasCategoria"
+            :items="categorias"
         ></v-select>
         <v-text-field
-            label="Género:"
-            v-model="genero"
+            label="Desarrollador:"
+            v-model="desarrollador"
             required
-            :rules="reglasGenero"
+            :rules="reglasDesarrollador"
         ></v-text-field>
         <v-btn
             @click="guardar"
@@ -40,27 +40,27 @@ export default {
   data: () => ({
     valido: true,
     nombre: '',
-    sinopsis: '',
-    genero: '',
-    anhopub: '',
+    resumen: '',
+    categoria: '',
+    desarrollador: '',
     reglasNombre: [
-      v => !!v || 'La película es requerida',
+      v => !!v || 'La aplicacion es requerida',
     ],
-    reglasGenero: [
-      v => !!v || 'Género de película requerido',
-      v => (v && v.length <= 80) || 'Género debe ser menor o igual a 80 caracteres',
+    reglasDesarrollador: [
+      v => !!v || 'Desarrollador de la aplicacion es requerido',
+      v => (v && v.length <= 30) || 'Desarrollador debe ser menor o igual a 30 caracteres',
     ],
-    reglasPublicacion: [
-      v => !!v || 'Año de publicación es requerido',
+    reglasCategoria: [
+      v => !!v || 'La categoria es requerida',
     ],
     select: null,
-    anhos: [
-      '2016',
-      '1967',
-      '2001',
-      '1958',
-      '1959',
-      '2018',
+    categorias: [
+      'Video juego',
+      'Entretenimiento',
+      'Utilidad',
+      'Productividad',
+      'Red social',
+      'Musica',
     ],
   }),
 
@@ -72,11 +72,11 @@ export default {
           method: 'post',
           data: {
             nombre: this.nombre,
-            sinopsis: this.sinopsis,
-            anhopub: this.anhopub,
-            genero: this.genero,
+            resumen: this.resumen,
+            categoria: this.categoria,
+            desarrollador: this.desarrollador,
           },
-          url: 'http://localhost:8081/peliculas',
+          url: 'http://localhost:8081/aplicaciones',
           headers: {
             'Content-Type': 'application/json',
           },
@@ -84,7 +84,7 @@ export default {
           .then(() => {
             this.$swal(
               '¡Grandioso!',
-              'Película guardada satisfactoriamente',
+              'Aplicacion guardada satisfactoriamente',
               'success',
             );
             this.$router.push({ name: 'Inicio' });
@@ -93,7 +93,7 @@ export default {
           .catch(() => {
             this.$swal(
               '¡¡Oh no!!',
-              'Ocurrió un error y no pudimos agregar la película',
+              'Ocurrió un error y no pudimos agregar la aplicacion',
               'error',
             );
           });
