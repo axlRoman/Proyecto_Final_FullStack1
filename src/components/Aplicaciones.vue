@@ -1,6 +1,7 @@
 <template>
   <v-flex>
-    <div class="titulo-primario">                                                                        ª</div>
+    <div class="titulo-primario">                                   ª
+                                           ª</div>
     <div class="titulo-primario">¡Conece y califica tus aplicaciones favoritas!</div>
     <v-container>
       <v-row>

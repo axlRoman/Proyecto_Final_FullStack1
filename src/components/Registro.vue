@@ -56,27 +56,29 @@ export default {
   methods: {
     async enviar() {
       if (this.$refs.formulario.validate()) {
-        // Agregar proceso aqui
-        return axios.post('http://localhost:8081/usuarios/registro', {
-          data: {
-            nombre: this.nombre,
-            email: this.email,
-            contrasenha: this.contrasenha,
-          },
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        })
-          .then(() => {
-            this.$swal('Genial!', 'Registro exitoso', 'success');
-            this.$router.push({ name: 'Login' });
-          })
-          .catch((error) => {
-            const mensaje = error.response.data.mensaje;
-            this.$swal('¡Oh no!', `${mensaje}`, 'error');
+        if (this.contrasenha !== this.confirmar_contrasenha) {
+          this.$swal('¡Oh no!', 'Las contraseñas no coinciden', 'error');
+          return; // Stop the execution if passwords don't match
+        }
+        try {
+          await axios.post('http://localhost:8081/usuarios/registro', {
+            data: {
+              nombre: this.nombre,
+              email: this.email,
+              contrasenha: this.contrasenha,
+            },
+            headers: {
+              'Content-Type': 'application/json',
+            },
           });
+
+          this.$swal('¡Genial!', 'Registro exitoso', 'success');
+          this.$router.push({ name: 'Login' });
+        } catch (error) {
+          const mensaje = error.response.data.mensaje;
+          this.$swal('¡Oh no!', `${mensaje}`, 'error');
+        }
       }
-      return true;
     },
     limpiar() {
       this.$refs.formulario.reset();

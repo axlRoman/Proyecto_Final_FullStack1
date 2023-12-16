@@ -14,12 +14,12 @@
      required
     ></v-text-field>
     <v-btn
-     @click="entrar"
+     @click="entrar()"
      :disabled="!valido"
      color="success"
     >
     <v-icon rigth>mdi-checkbox-marked-circle</v-icon>Entrar</v-btn>
-    <v-btn @click="limpiar" color="error"> <v-icon>mdi-close-circle</v-icon>Limpiar</v-btn>
+    <v-btn @click="limpiar()" color="error"> <v-icon>mdi-close-circle</v-icon>Limpiar</v-btn>
 
     <v-spacer class="mb-4"></v-spacer>
 
@@ -54,13 +54,11 @@ export default {
   methods: {
     async entrar() {
       if (this.$refs.formulario.validate()) {
-        return axios({
-          method: 'post',
+        return axios.post('http://localhost:8081/usuarios/registro', {
           data: {
             email: this.email,
             contrasenha: this.contrasenha,
           },
-          url: 'http://localhost:8081/usuarios/login',
           headers: {
             'Content-Type': 'application/json',
           },

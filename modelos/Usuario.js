@@ -26,7 +26,7 @@ module.exports.crearUsuario = (nuevoUsuario, callback) => {
             const nuevoRecursousuario = new Usuario({
                 nombre: nuevoUsuario.nombre,
                 email: nuevoUsuario.email,
-                contrasenha: nuevaContrasenha.contrasenha,
+                contrasenha: hash,
             });
 
             // Guardar el nuevo usuario en la base de datos
