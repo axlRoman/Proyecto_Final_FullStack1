@@ -11,7 +11,7 @@
           </v-list-item>
         </router-link>
 
-        <router-link v-bind:to="{name: 'Inicio'}" class="side_bar_link">
+        <router-link v-bind:to="{name: 'Aplicacion'}" class="side_bar_link">
           <v-list-item>
             <v-list-item-action>
               <v-icon>mdi-gamepad</v-icon>
@@ -62,23 +62,6 @@
     </v-app-bar>
 
     <v-spacer class="mb-4"></v-spacer>
-
-    <v-row class="carrusel">
-    <v-col cols="11">
-      <v-carousel height="430">
-        <v-carousel-item>
-          <v-img src="https://ouytfgyhujiko.000webhostapp.com/og__c59t0pflacq6.png" />
-        </v-carousel-item>
-        <v-carousel-item>
-          <v-img src="https://ouytfgyhujiko.000webhostapp.com/og__c59t0pflacq6.png" />
-        </v-carousel-item>
-        <v-carousel-item>
-          <v-img src="https://ouytfgyhujiko.000webhostapp.com/og__c59t0pflacq6.png" />
-        </v-carousel-item>
-      </v-carousel>
-    </v-col>
-  </v-row>
-
     <v-main>
      <v-container fluid>
        <div id="app">
@@ -87,7 +70,7 @@
      </v-container>
     </v-main>
 
-    <v-footer color="#2c3e50" app>
+    <v-footer color="#000000" class="footer" app>
       <span class="white--text">&copy; Todos los derechos reservados 2023</span>
     </v-footer>
   </v-app>

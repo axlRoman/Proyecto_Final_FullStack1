@@ -1,26 +1,42 @@
 <template>
   <v-layout row justify-center align-center>
-    <v-flex xs4>
+  <v-row class="carrusel">
+    <v-col cols="12">
+      <v-carousel height="430">
+        <v-carousel-item>
+          <v-img src="https://ouytfgyhujiko.000webhostapp.com/og__c59t0pflacq6.png" />
+        </v-carousel-item>
+        <v-carousel-item>
+          <v-img src="https://ouytfgyhujiko.000webhostapp.com/og__c59t0pflacq6.png" />
+        </v-carousel-item>
+        <v-carousel-item>
+          <v-img src="https://ouytfgyhujiko.000webhostapp.com/og__c59t0pflacq6.png" />
+        </v-carousel-item>
+      </v-carousel>
+    </v-col>
+  </v-row>
+    
+
       <v-card
-        elevation="40"
+        elevation="20"
         outlined
         shaped
-        color="blue lighten-4"
+        color="bold lighten-4"
+        max-width="80%"
       >
-        <v-card-title primary-title class="d-flex justify-center">
+        <v-card-title primary-title class="justify-center">
           <div class="headline font-weight-bold">Aplicaciones</div>
         </v-card-title>
-        <img src="https://ouytfgyhujiko.000webhostapp.com/405589a9-1caa-4bee-a108-a0a68ab78f62.jpg" class="imagen-juego">
+        <img src="https://th.bing.com/th/id/OIP.tAnmrKhXx3VwiHKHGxp9FwHaDr?w=1089&h=540&rs=1&pid=ImgDetMain" class="imagen-apps">
         <v-card-text>
           <v-btn
-            rounded
-            color="#AA00FF"
+            color="#49576C"
             class="font-weight-bold white--text"
             v-bind:to="{name: 'Aplicaciones'}"
-          >Ver aplicaciones</v-btn>
+          >Ver todo</v-btn>
         </v-card-text>
       </v-card>
-    </v-flex>
+
   </v-layout>
 </template>
 

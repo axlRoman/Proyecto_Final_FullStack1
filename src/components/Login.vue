@@ -1,5 +1,5 @@
 <template>
-  <v-form v-model="valido" ref="formulario" lazy-validation>
+  <v-form class="formulario" v-model="valido" ref="formulario" lazy-validation>
     <v-text-field
      label="Email"
      v-model="email"
@@ -17,12 +17,23 @@
      @click="entrar"
      :disabled="!valido"
      color="success"
-    ><v-icon rigth>mdi-checkbox-marked-circle</v-icon>Entrar</v-btn>
+    >
+    
+    <v-icon rigth>mdi-checkbox-marked-circle</v-icon>Entrar</v-btn>
     <v-btn @click="limpiar" color="error"> <v-icon>mdi-close-circle</v-icon>Limpiar</v-btn>
 
     <v-spacer class="mb-4"></v-spacer>
 
-    <v-btn v-bind:to="{name: 'Registro'}" color="cyan">¿No tienes cuenta? ¡Registrate!</v-btn>
+    <v-btn class="font-weight-bold white--text" v-bind:to="{name: 'Registro'}" color="#49576C">Crear una cuenta</v-btn>
+
+    <div class="general-margin-top">
+    <v-btn @click="loginWithGoogle" color="#C25757" dark rounded>
+      <v-icon left>mdi-google</v-icon>
+      Ingresa con Google
+      </v-btn>
+    </div>
+      
+    </v-auth-button>
   </v-form>
 </template>
 
@@ -77,4 +88,5 @@ export default {
     },
   },
 };
+
 </script>
