@@ -79,12 +79,6 @@ a.side_bar_link {
     margin-top: 30px;
 }
 
-/* Agregar Album -> /musica/agregar */
-
-.contenedor-registro-albums {
-    margin-top: 150px;
-}
-
 .imagen-apps {
     max-width: 40%;
     max-height: 40%;
