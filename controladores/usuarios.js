@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 
 const ExtractJwt = passportJWT.ExtractJwt;
 const jwtOptions = {};
-jwtOptions.jswtFromRequest = ExtractJwt.fromAuthHeaderWithScheme('jwt');
+jwtOptions.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme('jwt');
 jwtOptions.secretOrKey = 'estoeslaclavesecreta';
 
 module.exports.controller = (app) => {
